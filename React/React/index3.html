@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>React3</title>
+  </head>
+  <body>
+    <div id="container"></div>
+    <div id="ul_div"></div>
+
+    <!--  Include Babel.js to transcompile JSX Code  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+
+    <!-- Include React and ReactDOM-->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+
+    <script type="text/babel">
+      // pure react or javascript code
+
+      // get container div
+      let container = document.getElementById("container");
+
+      // Component class
+      class Fruits extends React.Component {
+        render() {
+          let fruit_item = "Apple";
+          return (
+            <div>
+             <a href="http://www.dailywebtuition" target="_blank" title="Mysite">
+              Visit Website
+              </a>
+            </div>
+
+            <div>
+              <ul class="fruits">
+                <li class="item">Mango</li>
+                <li class="item">Banana</li>
+                <li class="item">{fruit_item}</li>
+              </ul>
+            </div>
+          );
+        }
+      }
+
+      // Render UI
+      ReactDOM.render(<Fruits />, container);
+    </script>
+  </body>
+</html>

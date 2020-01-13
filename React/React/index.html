@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>React</title>
+  </head>
+  <body>
+    <div id="container"></div>
+    <div id="ul_div"></div>
+    <!-- Include React and ReactDOM-->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+
+    <script>
+      // pure react or javascript code
+
+      // create react h1 element
+      let h1 = React.createElement(
+        "h1",
+        { id: "heading1", style: { color: "lightblue" } },
+        "Hello React"
+      );
+
+      // render in UI
+      ReactDOM.render(h1, document.getElementById("container"));
+
+      /*
+          *) children
+
+          ul=>
+           li=>"Banana"
+           li=> "Mango"
+
+           create children using react element
+      */
+
+      let ul = React.createElement(
+        "ul",
+        null,
+        React.createElement("li", null, "Banana"),
+        React.createElement("li", null, "Mango")
+      );
+
+      // Render element
+      ReactDOM.render(ul, document.getElementById("ul_div"));
+    </script>
+  </body>
+</html>
