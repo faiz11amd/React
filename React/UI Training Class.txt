@@ -1,0 +1,567 @@
+
+https://github.com/sudheerj/angular-interview-questions#what-is-angular-framework
+https://nareshit.com/javascript-interview-questions/
+https://nareshit.com/html-interview-questions/
+https://nareshit.com/html5-and-css-interview-questions/
+
+24-07-2019				UI Training Class (11 AM)
+==========				========================
+
+Q. What is Block Level Element and Inline Level Element ?
+Q. Difference between Block Level and Inline Level Element ?
+Q. How to convert Block Level Element into Inline Level Element ?
+Q. Diference between Tag and Element ?
+Q. What is the Priority order of styling ?
+Q. What is the merits and demerits of different type of styling ?
+Q. How to disfollow the Priority order of styling ?
+Q. What is Box Model in CSS ?
+Q. Diffrence between Margin and Padding ?
+Q. Define Positions in CSS ?
+Q. Define types of CSS selector ?
+Q. How to get a text box/<input/> value ?
+Q. How to get a value from <select> element ?
+Q. How many types of CSS Selector ?
+Q. 
+
+-------------------------------------------------------------------------------------------------------------
+Q. Assignment-1
+- Create a Square board.
+- Whithin board draw the 3 baloons of different size at right side of the board.
+- Draw one Arrow in Top Left corner of the board.
+- Create 3 buttons Top, Botttom and Enter.
+- By Top and Bottom button, Arrow moves up and down And by Enter, from Left to Right.
+Hint:
+  Top Click    - top: decreases, bottom: increases
+  Bottom Click - top: increases, bottom: decreases
+  Enter Click  - left: increases
+- Create and default value "No of Attempts = 2" and "Score = 0".
+-
+- When we click "Enter", Arrow move from left towards right side,
+  if arrow hits the "baloon" then baloon disappears and score becomes "1".
+  if arrow miss the baloon then hits on board border and "No of Attempt should decrease by 1.
+- When "No of Attempt become "0" then automatically refresh the page and acquire its default value or New Game.
+---------------------------------------------------------------------------------------------------------------
+Block-Level Element :-
+===================
+- It takes "parent" width as its own width.
+- It always starts in new line.
+eg. ol, ul, li, p, h1..h6, div etc..
+- By using "display:inline" CSS property, we can convert Block level element into inline element.
+
+Inline Element :-
+====================
+- It takes "content" width as its own width.
+- It not starts in new line.
+eg. span, img, input, select, a, i, b, etc.. 
+- By using "display:block" CSS property, we can convert inline element into Block level element  .
+
+Inline-Block Element :-
+====================
+- It takes your width.
+-- By using "display:inline-block" CSS property,
+
+Priority order of Styling :-
+=========================
+- inline > internal/embedded > external
+
+- if we want to disfollow the order then use,
+ "!imp" a at last of the property.
+
+Tag and Element :-
+===============
+- "Tag" - <p></p> - with out any content.
+- "Element" - <p>Content</p> - with content in tag.
+
+<input/> element :-
+================
+- type= "reset, button, submit, radio, checkbox, text, password, email, number, file, date, time, color, image, search, range"
+- We can fetch the value of input element,
+eg. <input id="in1" type="text"/>
+    var a = document.querySelector("#in1").value;
+
+CSS Selector :-
+============
+Parent and Child relation
+- ">" for all direct child
+- "space" for all direct or indirect child.
+
+- "*" universal selector.
+- "," for multiple selection.
+- ":first-child" - all the first childrens of all parents
+- ":last-child"  - all the last childrens of all parants
+- ":first-of-type" - first occurence from top to bottom
+- ":last-of-type"  - last occurence 
+- ":nth-child(i)"   - element based on children count
+- "+"  - first sibling
+- "~"  - all siblings
+- ["attrName:text"] - attribute selector - all the elements with matching attribute
+- tagname
+- .classname
+- #id
+
+eg.
+<div>
+   <p></p>        1
+   <span></span>  2
+   <h1></h1>      3
+   <span></span>  4 
+   <p></p>        5
+   <i></i>        6
+   <input/>       7
+</div>
+<script>
+Add a one more class in class attribute:-
+========================================
+		var a = document.querySelector("i:nth-child(6)");
+		  a.classList.add("hello");  // add className into element
+		  a.classList.remove("hello"); // remove the className from element
+		  a.className="c2";  // overwrite the className
+</script>
+
+document Selectors:-
+------------------
+-- Gives perticular element.
+	document.getElementById("id");
+	document.querySelector(".class/#id/tag");
+
+-- Gives a array.
+- document.getElementsByTagName("tagname");
+- document.getElementsByClassName("classname");
+- document.getElementsByName("name");
+- document.querySelectorAll(".class/#id/tag");
+	document.getElementsByClassName("classname")[0];
+
+				Positions
+				=========
+************************************************************************************************
+    position:absolute	          |	   position:fixed		
+************************************************************************************************
+ - Remove space from DOM.	     - Remove Space from DOM
+ - Apply T/R/B/L		     - Apply T/R/B/L
+ - It takes parent as reference,     - It takes view port/body as a reference.
+ if parent contain position other      i.e. text doesn't scroll when we increase or decrease 
+ than "static".			            the window size or on scrolling the page.
+ - It changes is behaviour.	     - It changes the behaviour.
+  display: block -> inline;	       display: block -> inline(takes content width);
+*************************************************************************************************
+
+*************************************************************************************************
+    position:relative		 |	   position:sticky
+*************************************************************************************************
+ - Not Remove space from DOM.		- Not Remove space from DOM.
+ - Apply T/R/B/L.			- Apply T/R/B/L.
+ - It takes a Current position		- It view port as a reference, 
+   /element as a refrence.		  stick text after reaching top while scrolling.
+ - It doesn't change its behaviour.	- It doesn't change its behaviour.
+*************************************************************************************************
+ position:static;
+*********************************************
+- Not Remove space from DOM. 
+- Its by default and doesn't apply T/R/B/L.
+- No reference.
+- Not change its behaviour.
+*********************************************
+
+26-07-2019
+==========
+---------------------------------------------------------------------------
+Q. Assignment-2
+- First make a some space from top.
+- Create a "text" and "image" on DOM.
+- Try to hover the "text" on "image".
+- But Make sure that we you decrease or increase the browser window,
+  then "text" should be stick at the position on image not move anywhere.
+Hint:
+- If we take bottom and right then what is the problem ?
+- If i decrease this page, my text interact with this.
+- So take "top" and "left", it is recommended.
+----------------------------------------------------------------------------
+29-07-2019
+==========
+	High Order Functions
+	====================
+-- The function which takes one function as an argument.
+-- Some predefined higher order functions are:
+   filter(function(){}), every(), some(), forEach(), indexOf(), 
+   find(), findIndex(), sort(), map(), reduce()
+
+Ex:
+		function f1(){ alert(" from function f1()" );}
+		function f2(f){ f(); }
+		//f2();  // f is not a function
+		//f2(10);  // f is not a function
+		f2(f1);
+
+Ex:
+		function add(a,b){
+		   a("nit")
+		   b("satya")
+		   return function(){ alert("durga"); }
+		}
+//console.log( add(function(d){ debugger; return d;},function(d){ debugger; return d;}) );
+console.log( add(function(d){ alert(d);},function(d){ alert(d);})() );
+
+Media Queries:-
+=============
+- It is used to design responsive web pages.
+- Using "@media" we can apply CSS properties for particular resolution to elements.
+- We have multiple media types like screen, print etc.
+
+Array Methods :-
+=============
+var a = [2, 33, 4, 5, 15];
+
+eg.  a.filter(function(v,i){ return v > 10 }); //
+
+eg.  a.every(function(v,i){ return v > 1 });   // true
+- return boolean
+- return true if all are true in array.
+
+eg.  a.some(function(v,i){ return v > 15 });
+- return boolean.
+- Atleast one true in array.
+
+eg.  a.forEach(function(v,i){ return v });
+
+-- indexOf() & find()  - when we want exact value of array.
+eg.  a.find(function(v,i){ return v=='33' });  // 33
+- return type any.
+- if not found then gives "undefined".
+
+eg.  a.findIndex(function(v,i){ return v=='33' });  // 1
+- return number/indexnumber if found.
+- return -1 , if not found.
+
+slice(startIndex,howmanyelement+1) :-
+=======
+- When get a perticular/specific part of array.
+- return type is array.
+eg.  a.slice(1,3);  // [33,4]
+
+splice() :-
+========
+- add/remove element first/last & middle form array.
+- return type is array.
+eg.  a.splice(2,0,10);  // [2,33,10,4,5,15]
+
+map() :-
+=====
+- Same operation on each & every element in array.
+eg.  
+var a = [2,100,10,4,15];
+a.map(function(v,i){ return v+i });
+
+reduce() :-
+========
+- return number.
+eg.
+a.reduce(function(i,v){
+	 i=i+v;
+	return i;
+ });
+
+sort() :-
+======
+- return number.
+
+var a = [2,10,100,15,4];
+
+eg. Dictionary sorting
+a.sort();  // [10,100,15,2,4]
+
+eg. number sorting by using camparing/callback/anonymous function
+a.sort(function(v1,v2){ return v1-v2 });  // assending order
+
+a.sort(function(v1,v2){ return v2-v1 ]);  // decending order
+
+30-07-2019
+==========
+<body>
+  <ul>
+    <li>sachin</li>
+    <li>dhoni</li>
+    <li>kholi</li>
+  </ul>
+</body>
+Q. We want to add dynamically dropdown items from array of string.
+eg.
+<script>
+var a = ['sachin','dhoni','kohli'];
+
+var option = document.getElementsByTagName("option");
+
+ul.map(function(v1){ return "<option>"+v1+"</option>" });
+</script>
+--------------------------------------------------------------------
+<select>
+  <option>Sachin</option>
+  <option>Dhoni</option>
+  <option>Kholi</option>
+</select>
+eg.
+<script>
+var a = ['sachin','dhoni','kohli'];
+
+var ul = document.getElementsByTagName("ul");
+
+ul.map(function(v1){ return "<li>"+v1+"</li>" });
+</script>
+---------------------------------------------------------------------------
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Run</th>
+  </tr>
+</table>
+Q. We want to show JSON array of objects data in table format(Name and Run column).
+var myplayers = [{ name:'sachin', run:20000 },{ name:'dhoni', run:15000 }]
+
+eg.
+myplayers.map(function(Object,i){
+  return 
+  "<tr>
+      '<td>'+Object.name+'</td>'
+      '<td>'+Object.run+'</td>'
+  </tr>";
+});
+
+Note:-
+====
+-- We can check the element present in array - include(), indexOf()
+			join()
+			toString()
+	indexOf()			push()
+	includes()			pop()
+					shift()
+					unshift()
+			splice()
+			slice()
+
+eg.
+	var name = "NareshIT";
+	name.length; // 9
+	name.indexOf("e");  // 3
+	name.indexOf("ee"); // -1
+	name.indexOf("esh"); // 3
+	name.includes("e");  // true
+	name.charAt(2);  // "r"
+	name.charCodeAt(2); // 114
+	name.startsWith("n"); // false (case sensitive)
+	name.endsWith();
+	name.split(" ");  // convert the string into array
+
+	name.slice(2,5); // "res" - (startIndex, lastIndex-1)
+	name.substring(2,5); // "res" - takes the difference (5-2 = 3)
+	name.slice(5,2); // " " (empty) - first value should less than second
+	name.substring(5,2);  // "resh" - takes whole character
+
+Object:
+======
+eg.
+	var obj = {};
+
+Q. How can we check in object, data is present or not ?
+- Property contains "key" & "value" pairs.
+- "key" is mandatory than "value".
+eg.
+	Object.keys(obj); // array contains keys
+	Object.keys(obj).length;  // 3   -- (Object.keys(obj)) - may be string or array
+
+-- Updata/Insert data in object.
+	obj.name = "sachin";
+	obj.runs = 20000;
+	obj.full name = "sachin ten";  // unexpected indentifier bcz "." operator not recognise the space in property.
+	obj["full name"] = "sachin ten";
+	obj["loc"] = "Hyd";
+	obj;  // hit enter in console.
+
+- If, "key" is there in object - Update Operation
+      "key" is not present in object - Insert Operation
+
+-- Delete the property from object :-
+eg.	delete obj.name;  // true
+
+-- Retrieve the data from object :-
+eg.	obj.runs;  // 1500
+	obj["full name"]; // "sttt"
+
+-- (for in loop)  in object.
+for(key in obj){
+  debugger;
+  console.log(obj[key]);
+}
+
+Note:-
+====
+-- "[]" bracket is used for dynamic value and spaces possible.
+-- "." operator is only for static value and no-spaces possible.
+
+
+eg. 
+Single Object :-
+var o = { };
+
+Array of object :-
+var arr = [{},{},{}];
+
+Pure array :-
+var arr = ["Sachin", "Dhoni", "Kholi"];
+
+
+Q. 
+players = [ {n: "scn", r:20000, loc: "Mum"}, {n: "dhn", r: 15000, loc: "Hyd"}];
+
+players.filter(function(o,i){ return o.r>15000 });  // gives first object of array
+		-----------------------------------
+players.every(function(o,i){return o.r>8000});  // true
+		------------------------------------
+players.some(function(o,i){return o.r>8000});   // true
+		------------------------------------
+players.filter(function(o,i){ return o.r>13000 });  // give a both object
+		------------------------------------
+players.filter(function(o,i){ o.r>13000; return o.n.startsWith("s"); }); // 2 filter conditions
+		------------------------------------
+players.filter(function(o,i){ return o.r>18000 && o.n.startsWith("s"); }) // before && operator don't placed a ";"
+		------------------------------------
+
+
+Q. var a;  
+   c.l(a); // undefined
+   a.length; // Uncaught TypeError: Cannot read property 'length' of undefined
+-- Don't apply any operation on "undefined" value.
+
+Q. var a = null;
+   c.l(a);  // null
+   a.length;  // Uncaught TypeError: Cannot read property 'length' of null
+
+Q. var a = 10;
+   a();  // Uncaught TypeError: a is not a function
+
+Q. function f1(a) { return a.length;}
+   f1();  // Uncaught TypeError: Cannot read property 'length' of undefined
+   f1(10);  // undefined
+   f1("10");  // 2
+-- "length" property is only applicable on "array" and "string".
+
+Q. var o = { name: 'ss'};
+   o.runs;  // undefined
+
+
+31-07-2019
+==========
+Q. var a = [];
+   a.push(10) 
+   o/p - [10]
+   returns: new length
+   no. of arguments: any
+
+eg.
+- push() method is used to insert an elements in the last index.
+
+var a = [10,20,30,40];  // a.length = 4
+  a.push();  // return array length = 4 - insert is not done
+  a.push(10); // [10,20,30,40,10]
+
+  Return Type: new length of array: 5
+
+  No. of arguments : any within "()" - a.push(11,12,13);  // [10,20,30,40,10,11,12,13]
+
+eg.
+- pop() method is used to remove an element from last index.
+
+var a = [10,20,30,40];  // a.length = 4
+  a.pop();  // [10,20,30]
+
+ Return Type: last removed element: 40
+
+ No. of arguments : no arguments - a.push(2);  // remove last one not read the value inside the "()"
+
+eg.
+- unshift() is used to insert an elements in the first index.
+
+var a = [10,20,30,40];  // a.length = 4
+  a.unshift(); // return length = 4 - insert is not done
+  a.unshift(20); // [20,10,20,30,40]
+
+ Return Type: new array length = 5 
+
+ No. of arguments: no arguments
+
+eg.
+- shift() is used to remove an element from first index.
+
+var a = [10,20,30,40];  // a.length = 4 
+   a.shift();  // [20,30,40]
+
+ Result Type: 10
+
+ No. of arguments: no arguments
+
+eg.
+- sort() with out arguments, which is used to sort an element in the array based on dictionary sorting, suitable for alphabets.
+
+var a = [10,2,100,15];
+   a.sort();  // [10, 100, 15, 2] - dictionary sorting
+
+- sort(-) with arguments, which is used to sort an elements in the array by return number(+ve,-ve,0), suitable for numbers.
+
+  a.sort((a,b)=>{ return a-b});  // [2, 10, 15, 100] - ascending order
+
+  a.sort((a,b)=>{ return b-a});  // [100, 15, 10, 2] - descending order
+
+eg.
+  a.filter((v,i)=>{ return v > 2 });  // [10,100,15]
+
+eg.
+  a.find((v,i)=>{ return v > 2; });  // 10  - first occurence greater than 2
+
+eg.
+  a.slice(1,3);  // [2, 100]
+
+eg. splice(startIndex,HowManyNo.ofElementRemovedfrom-startIndex,ElementWantsToAdd);
+var a = [10,2,100,15];
+  a.splice(1,0,20);  // [10, 20, 2, 100, 15]
+
+ Return Type: new array
+
+  a.splice(2,1);  // [10,20,100,15] - removed element: 2
+
+eg.
+var a = [10,2,100,15];
+  a.findIndex((v,i)=>{ return v == 100; });  // 2
+
+eg.
+var a = [10,2,100,15];
+a.map(function(item) { 
+    // Increment each item by 1
+    return item + 1; 
+});  // [11,3,101,16]
+-----------------------
+sum = 0;
+a.forEach((v,i)=>{ console.log(v + 1);});  // 11 3 101 16
+
+eg.
+var a = [10,2,100,15];
+var sumValue = 0, sumIndex=0;
+    a.forEach((v,i)=>{ 
+       sumValue+=v;
+       sumIndex+=i;        
+      })
+console.log("Sum of all Values " + sumValue);
+console.log("Sum of all Index " + sumIndex);
+
+eg.
+a.every((v,i)=>{ console.log(v > 3);});
+  
+
+
+
+
+
+
+
+
+
+
+
+
